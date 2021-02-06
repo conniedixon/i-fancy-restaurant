@@ -7,7 +7,6 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
   useEffect(() => {
     setShowing(false);
     cuisine.map((catergory) => {
-      console.log(catergory, selectedCuisines);
       if (selectedCuisines.includes(catergory)) setShowing(true);
     });
 
