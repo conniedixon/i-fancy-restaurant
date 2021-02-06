@@ -20,7 +20,7 @@ const RestaurantsHomepage = () => {
     <div>
       {loading === false ? (
         <div>
-          <h5>Restaurants in Leeds</h5>
+          <header>I fancy...</header>
           {cuisines.map((cuisine) => (
             <>
               <label htmlFor={cuisine}>{cuisine}</label>
@@ -29,20 +29,25 @@ const RestaurantsHomepage = () => {
                 id={cuisine}
                 name={cuisine}
                 onClick={() => {
-                  setSelectedCuisine([...selectedCuisine, cuisine]);
+                  if (selectedCuisine.includes(cuisine)) {
+                    let newArray = selectedCuisine.filter((x) => x !== cuisine);
+                    console.log(newArray);
+                    setSelectedCuisine(newArray);
+                  } else setSelectedCuisine([...selectedCuisine, cuisine]);
                 }}
               />
             </>
           ))}
+          {restaurants.map((restaurant) => (
+            <Restaurant
+              restaurant={restaurant}
+              key={restaurant.id}
+              selectedCuisines={selectedCuisine}
+            />
+          ))}
         </div>
       ) : (
         <p>loading...</p>
-      )}
-      {restaurants.map(
-        (restaurant) =>
-          restaurant.cuisine.includes(selectedCuisine) && (
-            <Restaurant restaurant={restaurant} />
-          )
       )}
     </div>
   );
