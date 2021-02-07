@@ -34,6 +34,19 @@ const RestaurantsHomepage = () => {
     <div className='main-body'>
       {loading === false ? (
         <>
+          <div className='restaurants-header-container'>
+            <header className='restaurants-header'>I fancy...</header>
+            <p className='p1'>
+              Select a catergory below to get started. See the github{" "}
+              <a
+                href='https://github.com/conniedixon/i-fancy-restaurant'
+                className='link'
+                target='_blank'>
+                here
+              </a>
+              .
+            </p>
+          </div>
           <div className='cuisine-button-container'>
             {cuisines.map((cuisine) => (
               <>
