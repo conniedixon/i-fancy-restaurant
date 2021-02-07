@@ -86,7 +86,7 @@ const TypeWriter = () => {
       <button
         className='nav-button button-grid'
         onClick={() => {
-          navigate("/");
+          navigate("/feed-me");
         }}>
         Feed Me
       </button>

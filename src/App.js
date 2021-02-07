@@ -8,8 +8,8 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Homepage path="/welcome"/>
-        <RestaurantsHomepage path="/"/>
+        <Homepage path="/"/>
+        <RestaurantsHomepage path="/feed-me"/>
       </Router>
     </div>
   );
