@@ -12,6 +12,9 @@ import Pakistani from "../assets/Pakistani.png";
 import Pub from "../assets/Pub.png";
 import Steakhouse from "../assets/Steakhouse.png";
 import Vietnamese from "../assets/Vietnamese.png";
+import DogFriendly from "../assets/DogFriendly.png";
+import Vegan from "../assets/Vegan.png";
+import Location from "../assets/Location.png";
 
 const Restaurant = ({ restaurant, selectedCuisines }) => {
   const { name, address, cuisine, rating } = restaurant;
@@ -21,17 +24,32 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
     setShowing(false);
     cuisine.map((catergory) => {
       if (selectedCuisines.includes(catergory)) setShowing(true);
+      if (
+        restaurant["dog-friendly"] &&
+        selectedCuisines.includes("Dog-Friendly")
+      )
+        setShowing(true);
+      if (restaurant["vegan-options"] && selectedCuisines.includes("Vegan"))
+        setShowing(true);
     });
 
     return () => {};
   }, [selectedCuisines]);
 
+  const returnRating = (x) => {
+    let rating = "";
+    for (let i = 0; i < x; i++) {
+      rating = `${rating}⭐`;
+    }
+    return rating;
+  };
+
   return (
     show && (
-      <div>
-        <h3>{name}</h3>
-        {cuisine.map((cuisine) => (
-          <div>
+      <div className='restaurant-container'>
+        <h3 className='restaurant-header'>{name}</h3>
+        <div>
+          {cuisine.map((cuisine) => (
             <img
               src={
                 cuisine === "Argentinian"
@@ -61,9 +79,23 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
               alt={cuisine}
               className='cuisine-emoji'
             />
-          </div>
-        ))}
-        <p>{address}</p>
+          ))}
+          {restaurant["dog-friendly"] && (
+            <img
+              src={DogFriendly}
+              alt='Dog Friendly'
+              className='cuisine-emoji'
+            />
+          )}
+          {restaurant["vegan-options"] && (
+            <img src={Vegan} alt='Vegan Options' className='cuisine-emoji' />
+          )}
+        </div>
+        <div className='location-container'>
+          <img src={Location} alt='location' className='location-emoji' />
+          <p>{address}</p>
+        </div>
+        <div>{returnRating(restaurant.rating)}</div>
       </div>
     )
   );

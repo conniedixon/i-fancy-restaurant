@@ -77,21 +77,25 @@ const TypeWriter = () => {
   }
 
   return (
-    <div className='title'>
-      <div className='h1-container'>
-        <h1>
-          {"I fancy"}&nbsp;
-          <span className='h1-cuisine'>{state.text}</span>
-          <span id='cursor' />
-        </h1>
-        <button
-          className='nav-button'
-          onClick={() => {
-            navigate("/");
-          }}>
-          Feed Me
-        </button>
-      </div>
+    <div className='h1-container'>
+      <h1>
+        {"I fancy"}&nbsp;
+        <span className='h1-cuisine'>{state.text}</span>
+        <span id='cursor' />
+      </h1>
+      {/* <p className='p1'>
+        Search Leeds restaurants by a range of cuisines, whether they are dog
+        friendly or if they offer vegan options.
+        <br />
+        See the github repo here.
+      </p> */}
+      <button
+        className='nav-button'
+        onClick={() => {
+          navigate("/");
+        }}>
+        Feed Me
+      </button>
     </div>
   );
 };
