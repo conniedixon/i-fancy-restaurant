@@ -48,7 +48,8 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
     show && (
       <div className='restaurant-container'>
         <h3 className='restaurant-header'>{name}</h3>
-        <div>
+        <div className='line-divider'></div>
+        <div className='cuisine-icon-container'>
           {cuisine.map((cuisine) => (
             <img
               src={
@@ -93,9 +94,9 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
         </div>
         <div className='location-container'>
           <img src={Location} alt='location' className='location-emoji' />
-          <p>{address}</p>
+          <p className='p2'>{address}</p>
         </div>
-        <div>{returnRating(restaurant.rating)}</div>
+        <div className='stars'>{returnRating(restaurant.rating)}</div>
       </div>
     )
   );
