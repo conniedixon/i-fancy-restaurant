@@ -397,6 +397,7 @@ h1 {
   width: 140px;
   justify-content: center;
   margin: 3px;
+  transition: all 0.2s ease-in;
 }
 
 .cuisine-button:hover {
