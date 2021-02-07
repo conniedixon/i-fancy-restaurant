@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Salami & Co",
-    "address": "10 Market Place, Otley, Leeds LS21 3AQ England",
+    "address": "10 Market Place, Otley, Leeds LS21 3AQ",
     "cuisine": ["Cafe", "British"],
     "dog-friendly": true,
     "vegan-options": true,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "LS6 Cafe",
-    "address": "16A Headingley Lane, Leeds LS6 2AS England",
+    "address": "16A Headingley Lane, Leeds LS6 2AS",
     "cuisine": ["British", "Cafe", "International"],
     "dog-friendly": true,
     "vegan-options": true,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Gaucho",
-    "address": "21-22 Park Row, Leeds LS1 5JF England",
+    "address": "21-22 Park Row, Leeds LS1 5JF",
     "cuisine": ["Steakhouse", "Argentinian"],
     "dog-friendly": false,
     "vegan-options": false,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Viet Guy",
-    "address": "159 Lower Briggate, Leeds LS1 6LY England",
+    "address": "159 Lower Briggate, Leeds LS1 6LY",
     "cuisine": ["Asian", "Vietnamese"],
     "dog-friendly": false,
     "vegan-options": true,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "The Brunswick",
-    "address": "82 North Street, Leeds LS2 7PN England",
+    "address": "82 North Street, Leeds LS2 7PN",
     "cuisine": ["Bar", "British", "Pub"],
     "dog-friendly": true,
     "vegan-options": true,
