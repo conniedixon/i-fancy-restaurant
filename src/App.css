@@ -36,3 +36,324 @@
     transform: rotate(360deg);
   }
 }
+
+.cuisine-emoji {
+  width: 30px;
+  height: 30px;
+}
+
+/* BACKGROUND */
+
+body {
+  font-family: "Alatsi", sans-serif;
+  margin: 0;
+  overflow: hidden;
+  /* background: black; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 10vw;
+  color: white;
+}
+
+canvas {
+  width: 100%;
+}
+
+/* TYPEWRITER */
+
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+.h1-container {
+  background-color: none;
+  border-color: black;
+  border-style: solid;
+  border-width: 15px;
+  width: 95vw;
+  height: 90vh;
+}
+
+h1 {
+  color: black;
+  font-size: 100px;
+  position: fixed;
+  left: 25%;
+  top: 25%;
+  z-index: 1;
+}
+
+.h1-cuisine {
+  color: #006381;
+  z-index: 1;
+}
+
+.nav-button {
+  border-style: none;
+  background-color: #006381;
+  color: white;
+}
+
+#cursor {
+  border-left: 0.1em solid black;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.homescreen-image {
+  width: 200px;
+  position: absolute;
+}
+
+.animate-1 {
+  animation: animate-1 13s linear 0s infinite alternate;
+}
+
+.animate-2 {
+  animation: animate-2 13s linear 0s infinite alternate;
+}
+
+.animate-3 {
+  animation: animate-3 13s linear 0s infinite alternate;
+}
+
+.animate-4 {
+  animation: animate-4 15s linear 0s infinite;
+}
+
+.animate-5 {
+  animation: animate-5 18s linear 0s infinite;
+}
+.animate-6 {
+  animation: animate-6 20s linear 0s infinite alternate;
+}
+.animate-7 {
+  animation: animate-7 15s linear 0s infinite;
+}
+.animate-8 {
+  animation: animate-8 13s linear 0s infinite;
+}
+.animate-9 {
+  animation: animate-9 21s linear 0s infinite;
+}
+.animate-10 {
+  animation: animate-10 18s linear 0s infinite alternate;
+}
+.animate-11 {
+  animation: animate-11 15s linear 0s infinite;
+}
+
+@keyframes animate-1 {
+  0% {
+    transform: rotate(0deg);
+    position: left 100%;
+  }
+  100% {
+    transform: rotate(360deg);
+    position: left 0%;
+  }
+  from {
+    left: 150%;
+    top: 50%;
+  }
+
+  to {
+    left: -50%;
+    top: -50%;
+  }
+}
+
+@keyframes animate-2 {
+  0% {
+    transform: rotate(10deg);
+    position: left 0%;
+  }
+  100% {
+    transform: rotate(180deg);
+    position: left 200%;
+  }
+  from {
+    left: 90%;
+    top: 100%;
+  }
+
+  to {
+    left: 80%;
+    top: -70%;
+  }
+}
+
+@keyframes animate-3 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(300deg);
+  }
+  from {
+    right: -20%;
+    top: 50%;
+  }
+
+  to {
+    right: 150%;
+    top: 30%;
+  }
+}
+
+@keyframes animate-4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: -150%;
+    top: -50%;
+  }
+
+  to {
+    left: 150%;
+    top: 150%;
+  }
+}
+
+@keyframes animate-5 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: -50%;
+    top: -50%;
+  }
+
+  to {
+    left: 50%;
+    top: 120%;
+  }
+}
+
+@keyframes animate-6 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: 10%;
+    top: -20%;
+  }
+
+  to {
+    left: 20%;
+    top: 120%;
+  }
+}
+
+@keyframes animate-7 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: -10%;
+    top: 50%;
+  }
+
+  to {
+    left: 100%;
+    top: -50%;
+  }
+}
+
+@keyframes animate-8 {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: 0%;
+    top: 120%;
+  }
+
+  to {
+    left: 20%;
+    top: -20%;
+  }
+}
+
+@keyframes animate-9 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+  from {
+    left: 200%;
+    top: 200%;
+  }
+
+  to {
+    left: -50%;
+    top: -50%;
+  }
+}
+
+@keyframes animate-10 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+  from {
+    left: 50%;
+    top: 120%;
+  }
+
+  to {
+    left: 50%;
+    top: -50%;
+  }
+}
+
+@keyframes animate-11 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    left: 120%;
+    top: 60%;
+  }
+
+  to {
+    left: -30%;
+    top: -50%;
+  }
+}
