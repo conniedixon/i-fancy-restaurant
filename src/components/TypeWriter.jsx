@@ -77,20 +77,14 @@ const TypeWriter = () => {
   }
 
   return (
-    <div className='h1-container'>
-      <h1>
+    <div>
+      <h1 className='h1-container-2 header-grid'>
         {"I fancy"}&nbsp;
         <span className='h1-cuisine'>{state.text}</span>
         <span id='cursor' />
       </h1>
-      {/* <p className='p1'>
-        Search Leeds restaurants by a range of cuisines, whether they are dog
-        friendly or if they offer vegan options.
-        <br />
-        See the github repo here.
-      </p> */}
       <button
-        className='nav-button'
+        className='nav-button button-grid'
         onClick={() => {
           navigate("/");
         }}>
