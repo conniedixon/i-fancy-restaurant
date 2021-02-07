@@ -40,6 +40,7 @@
 .cuisine-emoji {
   width: 30px;
   height: 30px;
+  padding: 3px;
 }
 
 /* BACKGROUND */
@@ -74,12 +75,17 @@ canvas {
 @import url("https://fonts.googleapis.com/css?family=VT323");
 
 .h1-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: none;
-  border-color: black;
-  border-style: solid;
+  /* border-color: black; */
+  /* border-style: solid; */
   border-width: 15px;
   width: 95vw;
   height: 90vh;
+  position: fixed;
 }
 
 h1 {
@@ -97,9 +103,19 @@ h1 {
 }
 
 .nav-button {
-  border-style: none;
-  background-color: #006381;
+  border: none;
+  padding: 15px 40px;
+  font-size: 25px;
+  border-radius: 30px;
+  background-color: #006381b4;
   color: white;
+  z-index: 1;
+  margin-top: 100px;
+}
+
+.nav-button:hover {
+  background-color: #006381;
+  z-index: 1;
 }
 
 #cursor {
@@ -356,4 +372,106 @@ h1 {
     left: -30%;
     top: -50%;
   }
+}
+
+/* CUISINE BUTTONS */
+
+.cuisine-button-emoji {
+  width: 25px;
+  padding: 2px 5px;
+}
+
+.cuisine-button {
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 30px;
+  background-color: #bfc5c7b4;
+  color: black;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: center;
+  margin: 3px;
+}
+
+.cuisine-button:hover {
+  background-color: #006381;
+  color: white;
+}
+
+.cuisine-button-selected {
+  background-color: #006381;
+  color: white;
+  z-index: 1;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: center;
+  margin: 4px;
+}
+
+.main-body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgb(241, 236, 236);
+}
+
+.cuisine-button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70vw;
+  justify-content: center;
+  align-content: center;
+  margin-left: 13vw;
+  margin-top: 70px;
+}
+
+.restaurant-container {
+  background-color: white;
+  height: 300px;
+  width: 250px;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 50px;
+}
+
+.restaurant-header {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.location-container {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.location-emoji {
+  margin-top: 20px;
+  height: 25px;
+}
+
+.grey-background {
+  background-color: rgb(241, 236, 236);
+  height: 80px;
+  width: 1000px;
+  margin-top: -220px;
+  margin-left: 40px;
+  position: fixed;
+}
+
+.p1 {
+  color: black;
+  margin-top: 100px;
+  margin-left: -50px;
+  font-size: 18px;
+  position: fixed;
 }
