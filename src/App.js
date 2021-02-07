@@ -2,6 +2,7 @@ import React from 'react';
 import {Router} from "@reach/router"
 import Homepage from './components/Homepage';
 import RestaurantsHomepage from './components/RestaurantsHomepage';
+import "./App.css"
 
 const App = () => {
   return (
