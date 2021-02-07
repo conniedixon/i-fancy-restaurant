@@ -33,102 +33,108 @@ const RestaurantsHomepage = () => {
   return (
     <div className='main-body'>
       {loading === false ? (
-        <div className='cuisine-button-container'>
-          {cuisines.map((cuisine) => (
-            <>
-              <button
-                id={cuisine}
-                className={
-                  selectedCuisine.includes(cuisine)
-                    ? "cuisine-button-selected"
-                    : "cuisine-button"
-                }
-                onClick={() => {
-                  if (selectedCuisine.includes(cuisine)) {
-                    let newArray = selectedCuisine.filter((x) => x !== cuisine);
-                    console.log(newArray);
-                    setSelectedCuisine(newArray);
-                  } else setSelectedCuisine([...selectedCuisine, cuisine]);
-                }}>
-                <img
-                  src={
-                    cuisine === "Argentinian"
-                      ? Argentinian
-                      : cuisine === "Asian"
-                      ? Asian
-                      : cuisine === "Balti"
-                      ? Balti
-                      : cuisine === "Bar"
-                      ? Bar
-                      : cuisine === "British"
-                      ? British
-                      : cuisine === "Cafe"
-                      ? Cafe
-                      : cuisine === "Indian"
-                      ? Indian
-                      : cuisine === "International"
-                      ? International
-                      : cuisine === "Pakistani"
-                      ? Pakistani
-                      : cuisine === "Pub"
-                      ? Pub
-                      : cuisine === "Steakhouse"
-                      ? Steakhouse
-                      : Vietnamese
+        <>
+          <div className='cuisine-button-container'>
+            {cuisines.map((cuisine) => (
+              <>
+                <button
+                  id={cuisine}
+                  className={
+                    selectedCuisine.includes(cuisine)
+                      ? "cuisine-button-selected"
+                      : "cuisine-button"
                   }
-                  alt={cuisine}
-                  className='cuisine-button-emoji'
-                />
-                {cuisine}
-              </button>
-            </>
-          ))}
-          <button
-            className={
-              selectedCuisine.includes("Vegan")
-                ? "cuisine-button-selected"
-                : "cuisine-button"
-            }
-            onClick={() => {
-              if (selectedCuisine.includes("Vegan")) {
-                let newArray = selectedCuisine.filter((x) => x !== "Vegan");
-                console.log(newArray);
-                setSelectedCuisine(newArray);
-              } else setSelectedCuisine([...selectedCuisine, "Vegan"]);
-            }}>
-            <img src={Vegan} alt='Vegan' className='cuisine-button-emoji' />
-            Vegan
-          </button>
-          <button
-            className={
-              selectedCuisine.includes("Dog-Friendly")
-                ? "cuisine-button-selected"
-                : "cuisine-button"
-            }
-            onClick={() => {
-              if (selectedCuisine.includes("Dog-Friendly")) {
-                let newArray = selectedCuisine.filter(
-                  (x) => x !== "Dog-Friendly"
-                );
-                console.log(newArray);
-                setSelectedCuisine(newArray);
-              } else setSelectedCuisine([...selectedCuisine, "Dog-Friendly"]);
-            }}>
-            <img
-              src={DogFriendly}
-              alt='Dog Friendly'
-              className='cuisine-button-emoji'
-            />
-            Dog Friendly
-          </button>
-          {restaurants.map((restaurant) => (
-            <Restaurant
-              restaurant={restaurant}
-              key={restaurant.id}
-              selectedCuisines={selectedCuisine}
-            />
-          ))}
-        </div>
+                  onClick={() => {
+                    if (selectedCuisine.includes(cuisine)) {
+                      let newArray = selectedCuisine.filter(
+                        (x) => x !== cuisine
+                      );
+                      console.log(newArray);
+                      setSelectedCuisine(newArray);
+                    } else setSelectedCuisine([...selectedCuisine, cuisine]);
+                  }}>
+                  <img
+                    src={
+                      cuisine === "Argentinian"
+                        ? Argentinian
+                        : cuisine === "Asian"
+                        ? Asian
+                        : cuisine === "Balti"
+                        ? Balti
+                        : cuisine === "Bar"
+                        ? Bar
+                        : cuisine === "British"
+                        ? British
+                        : cuisine === "Cafe"
+                        ? Cafe
+                        : cuisine === "Indian"
+                        ? Indian
+                        : cuisine === "International"
+                        ? International
+                        : cuisine === "Pakistani"
+                        ? Pakistani
+                        : cuisine === "Pub"
+                        ? Pub
+                        : cuisine === "Steakhouse"
+                        ? Steakhouse
+                        : Vietnamese
+                    }
+                    alt={cuisine}
+                    className='cuisine-button-emoji'
+                  />
+                  {cuisine}
+                </button>
+              </>
+            ))}
+            <button
+              className={
+                selectedCuisine.includes("Vegan")
+                  ? "cuisine-button-selected"
+                  : "cuisine-button"
+              }
+              onClick={() => {
+                if (selectedCuisine.includes("Vegan")) {
+                  let newArray = selectedCuisine.filter((x) => x !== "Vegan");
+                  console.log(newArray);
+                  setSelectedCuisine(newArray);
+                } else setSelectedCuisine([...selectedCuisine, "Vegan"]);
+              }}>
+              <img src={Vegan} alt='Vegan' className='cuisine-button-emoji' />
+              Vegan
+            </button>
+            <button
+              className={
+                selectedCuisine.includes("Dog-Friendly")
+                  ? "cuisine-button-selected"
+                  : "cuisine-button"
+              }
+              onClick={() => {
+                if (selectedCuisine.includes("Dog-Friendly")) {
+                  let newArray = selectedCuisine.filter(
+                    (x) => x !== "Dog-Friendly"
+                  );
+                  console.log(newArray);
+                  setSelectedCuisine(newArray);
+                } else setSelectedCuisine([...selectedCuisine, "Dog-Friendly"]);
+              }}>
+              <img
+                src={DogFriendly}
+                alt='Dog Friendly'
+                className='cuisine-button-emoji'
+              />
+              Dog Friendly
+            </button>
+          </div>
+          <div className='restaurants-container'>
+            {restaurants.map((restaurant) => (
+              <Restaurant
+                restaurant={restaurant}
+                key={restaurant.id}
+                selectedCuisines={selectedCuisine}
+              />
+            ))}
+          </div>
+        </>
       ) : (
         <p>loading...</p>
       )}

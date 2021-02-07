@@ -96,7 +96,7 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
           <img src={Location} alt='location' className='location-emoji' />
           <p className='p2'>{address}</p>
         </div>
-        <div className='stars'>{returnRating(restaurant.rating)}</div>
+        <div className='stars'>{returnRating(rating)}</div>
       </div>
     )
   );
