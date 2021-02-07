@@ -59,6 +59,7 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
                   : Vietnamese
               }
               alt={cuisine}
+              className='cuisine-emoji'
             />
           </div>
         ))}
