@@ -463,10 +463,10 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70vw;
+  width: 60vw;
   justify-content: center;
   align-content: center;
-  margin-left: 13vw;
+  margin-left: 18vw;
   margin-top: 50px;
 }
 
