@@ -460,6 +460,55 @@ h1 {
   margin-bottom: 5px;
 }
 
+.select-all-button {
+  border: none;
+  font-size: 11px;
+  border-radius: 30px;
+  background-color: rgba(213, 220, 223, 0.452);
+  color: black;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  justify-content: center;
+  margin: 3px;
+  transition: all 0.2s ease-in;
+  padding: 5px;
+  font-style: italic;
+}
+
+.no-response-button {
+  border: none;
+  font-size: 11px;
+  border-radius: 30px;
+  background-color: rgba(213, 220, 223, 0.452);
+  opacity: 0.2;
+  color: black;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  justify-content: center;
+  margin: 3px;
+  transition: all 0.2s ease-in;
+  padding: 5px;
+  font-style: italic;
+}
+
+.select-all-button:hover {
+  background-color: #006381;
+  color: white;
+}
+
+.select-all-button-container {
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  justify-content: center;
+  margin-left: 13vw;
+  margin-top: -20px;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

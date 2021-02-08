@@ -47,19 +47,7 @@ const RestaurantsHomepage = () => {
               .
             </p>
           </div>
-          <button
-            onClick={() => {
-              const cuisines = getCuisines();
-              setSelectedCuisine([...cuisines]);
-            }}>
-            Select All
-          </button>
-          <button
-            onClick={() => {
-              setSelectedCuisine([]);
-            }}>
-            Clear Selection
-          </button>
+
           <div className='cuisine-button-container'>
             {cuisines.map((cuisine) => (
               <>
@@ -155,6 +143,32 @@ const RestaurantsHomepage = () => {
               />
               <p>Dog Friendly</p>
             </div>
+          </div>
+
+          <div className='select-all-button-container'>
+            <button
+              className={
+                selectedCuisine.length === cuisines.length
+                  ? "no-response-button"
+                  : "select-all-button"
+              }
+              onClick={() => {
+                const cuisines = getCuisines();
+                setSelectedCuisine([...cuisines]);
+              }}>
+              Select All
+            </button>
+            <button
+              className={
+                selectedCuisine.length === 0
+                  ? "no-response-button"
+                  : "select-all-button"
+              }
+              onClick={() => {
+                setSelectedCuisine([]);
+              }}>
+              Clear Selection
+            </button>
           </div>
 
           <div className='restaurants-container'>
