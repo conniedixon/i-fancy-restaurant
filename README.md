@@ -8,7 +8,7 @@ I fancy is a React Web App for viewing restaurants in Leeds.
 
 ## Usage
 
-`npm start` will open a local server
+`npm start` will open a local server.
 This website is hosted at https://i-fancy.herokuapp.com/
 
 ### Features
