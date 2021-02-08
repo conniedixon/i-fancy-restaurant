@@ -47,6 +47,19 @@ const RestaurantsHomepage = () => {
               .
             </p>
           </div>
+          <button
+            onClick={() => {
+              const cuisines = getCuisines();
+              setSelectedCuisine([...cuisines]);
+            }}>
+            Select All
+          </button>
+          <button
+            onClick={() => {
+              setSelectedCuisine([]);
+            }}>
+            Clear Selection
+          </button>
           <div className='cuisine-button-container'>
             {cuisines.map((cuisine) => (
               <>
