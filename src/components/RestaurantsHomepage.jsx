@@ -24,7 +24,6 @@ const RestaurantsHomepage = () => {
 
   useEffect(() => {
     const typesOfCuisine = getCuisines();
-    // console.log(typesOfCuisine)
     setCuisines(typesOfCuisine);
     setLoading(false);
     return () => {};
@@ -41,7 +40,8 @@ const RestaurantsHomepage = () => {
               <a
                 href='https://github.com/conniedixon/i-fancy-restaurant'
                 className='link'
-                target='_blank'>
+                target='_blank'
+                rel='noreferrer'>
                 here
               </a>
               .
@@ -62,7 +62,6 @@ const RestaurantsHomepage = () => {
                       let newArray = selectedCuisine.filter(
                         (x) => x !== cuisine
                       );
-                      console.log(newArray);
                       setSelectedCuisine(newArray);
                     } else setSelectedCuisine([...selectedCuisine, cuisine]);
                   }}>
@@ -110,7 +109,6 @@ const RestaurantsHomepage = () => {
                       let newArray = selectedCuisine.filter(
                         (x) => x !== "Vegan"
                       );
-                      console.log(newArray);
                       setSelectedCuisine(newArray);
                     } else setSelectedCuisine([...selectedCuisine, "Vegan"]);
                   }}
@@ -130,7 +128,6 @@ const RestaurantsHomepage = () => {
                       let newArray = selectedCuisine.filter(
                         (x) => x !== "Dog-Friendly"
                       );
-                      console.log(newArray);
                       setSelectedCuisine(newArray);
                     } else
                       setSelectedCuisine([...selectedCuisine, "Dog-Friendly"]);

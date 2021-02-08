@@ -25,13 +25,11 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
 
     cuisine.map((catergory) => {
       if (selectedCuisines.includes(catergory)) setShowing(true);
-      if (show) {
-        if (selectedCuisines.includes("Dog-Friendly")) {
-          if (!restaurant["dog-friendly"]) setShowing(false);
-        }
-        if (selectedCuisines.includes("Vegan")) {
-          if (!restaurant["vegan-options"]) setShowing(false);
-        }
+      if (selectedCuisines.includes("Dog-Friendly")) {
+        if (!restaurant["dog-friendly"]) setShowing(false);
+      }
+      if (selectedCuisines.includes("Vegan")) {
+        if (!restaurant["vegan-options"]) setShowing(false);
       }
     });
 
