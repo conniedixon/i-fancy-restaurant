@@ -22,15 +22,16 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
 
   useEffect(() => {
     setShowing(false);
+
     cuisine.map((catergory) => {
       if (selectedCuisines.includes(catergory)) setShowing(true);
-      if (selectedCuisines.includes["Dog-Friendly"]) {
-        if (restaurant["dog-friendly"]) setShowing(true);
-        else setShowing(false);
-      }
-      if (selectedCuisines.includes["Vegan"]) {
-        if (restaurant["vegan-options"]) setShowing(true);
-        else setShowing(false);
+      if (show) {
+        if (selectedCuisines.includes("Dog-Friendly")) {
+          if (!restaurant["dog-friendly"]) setShowing(false);
+        }
+        if (selectedCuisines.includes("Vegan")) {
+          if (!restaurant["vegan-options"]) setShowing(false);
+        }
       }
     });
 
