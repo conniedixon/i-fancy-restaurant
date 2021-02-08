@@ -155,6 +155,9 @@ const RestaurantsHomepage = () => {
               }
               onClick={() => {
                 const cuisines = getCuisines();
+                if (selectedCuisine.includes("Vegan")) cuisines.push("Vegan");
+                if (selectedCuisine.includes("Dog-Friendly"))
+                  cuisines.push("Dog-Friendly");
                 setSelectedCuisine([...cuisines]);
               }}>
               Select All
