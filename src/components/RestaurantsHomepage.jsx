@@ -99,45 +99,54 @@ const RestaurantsHomepage = () => {
                 </button>
               </>
             ))}
-            <button
-              className={
-                selectedCuisine.includes("Vegan")
-                  ? "cuisine-button-selected"
-                  : "cuisine-button"
-              }
-              onClick={() => {
-                if (selectedCuisine.includes("Vegan")) {
-                  let newArray = selectedCuisine.filter((x) => x !== "Vegan");
-                  console.log(newArray);
-                  setSelectedCuisine(newArray);
-                } else setSelectedCuisine([...selectedCuisine, "Vegan"]);
-              }}>
+          </div>
+          <div className='cuisine-toggle-container'>
+            <div className='toggle-container'>
+              <label className='switch'>
+                <input
+                  type='checkbox'
+                  onClick={() => {
+                    if (selectedCuisine.includes("Vegan")) {
+                      let newArray = selectedCuisine.filter(
+                        (x) => x !== "Vegan"
+                      );
+                      console.log(newArray);
+                      setSelectedCuisine(newArray);
+                    } else setSelectedCuisine([...selectedCuisine, "Vegan"]);
+                  }}
+                />
+                <div className='slider'></div>
+              </label>
               <img src={Vegan} alt='Vegan' className='cuisine-button-emoji' />
-              Vegan
-            </button>
-            <button
-              className={
-                selectedCuisine.includes("Dog-Friendly")
-                  ? "cuisine-button-selected"
-                  : "cuisine-button"
-              }
-              onClick={() => {
-                if (selectedCuisine.includes("Dog-Friendly")) {
-                  let newArray = selectedCuisine.filter(
-                    (x) => x !== "Dog-Friendly"
-                  );
-                  console.log(newArray);
-                  setSelectedCuisine(newArray);
-                } else setSelectedCuisine([...selectedCuisine, "Dog-Friendly"]);
-              }}>
+              <p>Vegan</p>
+            </div>
+
+            <div className='toggle-container'>
+              <label className='switch'>
+                <input
+                  type='checkbox'
+                  onClick={() => {
+                    if (selectedCuisine.includes("Dog-Friendly")) {
+                      let newArray = selectedCuisine.filter(
+                        (x) => x !== "Dog-Friendly"
+                      );
+                      console.log(newArray);
+                      setSelectedCuisine(newArray);
+                    } else
+                      setSelectedCuisine([...selectedCuisine, "Dog-Friendly"]);
+                  }}
+                />
+                <div className='slider'></div>
+              </label>
               <img
                 src={DogFriendly}
                 alt='Dog Friendly'
                 className='cuisine-button-emoji'
               />
-              Dog Friendly
-            </button>
+              <p>Dog Friendly</p>
+            </div>
           </div>
+
           <div className='restaurants-container'>
             {restaurants.map((restaurant) => (
               <Restaurant
