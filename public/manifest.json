@@ -1,0 +1,13 @@
+{
+    "short_name": "I Fancy",
+    "name": "I Fancy Restaurant Viewer App",
+    "icons": [
+      {
+        "src": "./favicon.ico",
+        "sizes": "192x192",
+        "type": "image/ico"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone"
+  }
