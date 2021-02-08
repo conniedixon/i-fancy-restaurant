@@ -21,6 +21,7 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
   const [show, setShowing] = useState(false);
 
   useEffect(() => {
+    console.log(selectedCuisines);
     setShowing(false);
 
     cuisine.map((catergory) => {

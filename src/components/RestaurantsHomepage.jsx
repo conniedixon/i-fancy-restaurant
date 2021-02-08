@@ -100,6 +100,7 @@ const RestaurantsHomepage = () => {
               </>
             ))}
           </div>
+
           <div className='cuisine-toggle-container'>
             <div className='toggle-container'>
               <label className='switch'>
@@ -160,12 +161,21 @@ const RestaurantsHomepage = () => {
             </button>
             <button
               className={
-                selectedCuisine.length === 0
+                selectedCuisine.length === 0 ||
+                (selectedCuisine.length === 1 &&
+                  selectedCuisine[0] === "Vegan") ||
+                (selectedCuisine.length === 1 &&
+                  selectedCuisine[0] === "Dog-Friendly") ||
+                (selectedCuisine.length === 2 &&
+                  selectedCuisine.includes("Vegan", "Dog-Friendly"))
                   ? "no-response-button"
                   : "select-all-button"
               }
               onClick={() => {
-                setSelectedCuisine([]);
+                let newArray = selectedCuisine.filter((x) => {
+                  if (x === "Vegan" || x === "Dog-Friendly") return true;
+                });
+                setSelectedCuisine(newArray);
               }}>
               Clear Selection
             </button>
