@@ -10,7 +10,6 @@ import InternationalImg from "../assets/International.png";
 import PakistaniImg from "../assets/Pakistani.png";
 import PubImg from "../assets/Pub.png";
 import SteakhouseImg from "../assets/Steakhouse.png";
-import VietnameseImg from "../assets/Vietnamese.png";
 
 const AnimatedImages = () => {
   return (

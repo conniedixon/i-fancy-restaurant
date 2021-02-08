@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { navigate } from "@reach/router";
+import { getCuisines } from "../utils/utils";
 
-const CONSTANTS = {
-  DELETING_SPEED: 200,
-  TYPING_SPEED: 150,
+const typewriterSpeeds = {
+  deleting: 200,
+  typing: 150,
 };
-
-const messages = [
-  "International",
-  "Steakhouse",
-  "Asian",
-  "Argentinian",
-  "Indian",
-  "Balti",
-  "Pakistani",
-  "British",
-  "Vegan",
-  "Dog Friendly",
-];
 
 const TypeWriter = () => {
   const [state, setState] = useState({
@@ -25,14 +13,21 @@ const TypeWriter = () => {
     message: "",
     isDeleting: false,
     loopNum: 0,
-    typingSpeed: CONSTANTS.TYPING_SPEED,
+    typingSpeed: typewriterSpeeds.typing,
   });
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const cuisines = getCuisines();
+    setMessages(cuisines);
+    return () => {};
+  }, []);
 
   useEffect(() => {
     let timer = "";
     const handleType = () => {
       setState((cs) => ({
-        ...cs, // cs means currentState
+        ...cs,
         text: getCurrentText(cs),
         typingSpeed: getTypingSpeed(cs),
       }));
@@ -52,7 +47,7 @@ const TypeWriter = () => {
       }, 1500);
     } else if (state.isDeleting && state.text === "") {
       setState((cs) => ({
-        ...cs, // cs means currentState
+        ...cs,
         isDeleting: false,
         loopNum: cs.loopNum + 1,
         message: getMessage(cs, messages),
@@ -60,26 +55,26 @@ const TypeWriter = () => {
     }
   }, [state.text, state.message, state.isDeleting, messages]);
 
-  function getCurrentText(currentState) {
+  const getCurrentText = (currentState) => {
     return currentState.isDeleting
       ? currentState.message.substring(0, currentState.text.length - 1)
       : currentState.message.substring(0, currentState.text.length + 1);
-  }
+  };
 
-  function getMessage(currentState, data) {
+  const getMessage = (currentState, data) => {
     return data[Number(currentState.loopNum) % Number(data.length)];
-  }
+  };
 
-  function getTypingSpeed(currentState) {
+  const getTypingSpeed = (currentState) => {
     return currentState.isDeleting
-      ? CONSTANTS.TYPING_SPEED
-      : CONSTANTS.DELETING_SPEED;
-  }
+      ? typewriterSpeeds.typing
+      : typewriterSpeeds.deleting;
+  };
 
   return (
     <div>
       <h1 className='h1-container-2 header-grid'>
-        {"I fancy"}&nbsp;
+        {"I fancy "}
         <span className='h1-cuisine'>{state.text}</span>
         <span id='cursor' />
       </h1>

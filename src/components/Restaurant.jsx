@@ -21,7 +21,6 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
   const [show, setShowing] = useState(false);
 
   useEffect(() => {
-    console.log(selectedCuisines);
     setShowing(false);
 
     cuisine.map((catergory) => {
@@ -37,7 +36,7 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
     return () => {};
   }, [selectedCuisines]);
 
-  const returnRating = (x) => {
+  const generateRating = (x) => {
     let rating = "";
     for (let i = 0; i < x; i++) {
       rating = `${rating}⭐`;
@@ -97,7 +96,7 @@ const Restaurant = ({ restaurant, selectedCuisines }) => {
           <img src={Location} alt='location' className='location-emoji' />
           <p className='p2'>{address}</p>
         </div>
-        <div className='stars'>{returnRating(rating)}</div>
+        <div className='stars'>{generateRating(rating)}</div>
       </div>
     )
   );
