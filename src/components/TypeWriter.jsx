@@ -7,14 +7,14 @@ const CONSTANTS = {
 };
 
 const messages = [
+  "International",
+  "Steakhouse",
   "Asian",
+  "Argentinian",
   "Indian",
   "Balti",
   "Pakistani",
   "British",
-  "International",
-  "Steakhouse",
-  "Argentinian",
   "Vegan",
   "Dog Friendly",
 ];
